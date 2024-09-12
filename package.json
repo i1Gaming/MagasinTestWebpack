@@ -5,8 +5,7 @@
   "scripts": {
     "build:scss": "webpack --config webpack.sass.config.js",
     "build:js": "webpack --config webpack.js.config.js",
-    "build:all": "npm run build:scss && npm run build:js",
-    "start": "webpack serve --open --config webpack.js.config.js"
+    "build:all": "npm run build:scss && npm run build:js"
   },
   "keywords": [],
   "author": "",

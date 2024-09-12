@@ -2,33 +2,33 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/styles/style.scss',  // Входная точка для SCSS
+  entry: './src/styles/style.scss', 
   output: {
-    path: path.resolve(__dirname, 'dist'),  // Папка для выходных файлов
-    filename: 'ignore.js'  // Фиктивный JS файл
+    path: path.resolve(__dirname, 'dist'), 
+    filename: 'ignore.js' 
   },
   module: {
     rules: [
       {
-        test: /\.scss$/,  // Для обработки SCSS файлов
+        test: /\.scss$/, 
         use: [
-          MiniCssExtractPlugin.loader,  // Извлечение CSS в отдельный файл
-          'css-loader',   // Преобразование CSS в CommonJS
-          'sass-loader'   // Компиляция SCSS в CSS
+          MiniCssExtractPlugin.loader,
+          'css-loader', 
+          'sass-loader'
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|otf)$/,  // Для обработки файлов шрифтов
-        type: 'asset/resource',  // Webpack встроенная обработка ресурсов
+        test: /\.(woff(2)?|ttf|eot|otf)$/,  
+        type: 'asset/resource', 
         generator: {
-          filename: 'fonts/[name][ext]',  // Путь для сохранения шрифтов в dist/fonts
+          filename: 'fonts/[name][ext]', 
         },
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',  // Название итогового CSS файла
+      filename: 'css/style.css', 
     }),
   ],
   mode: 'production',

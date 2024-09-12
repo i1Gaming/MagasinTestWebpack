@@ -1,21 +1,21 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',  // Входная точка для вашего JS файла
+  entry: './src/index.js',
   output: {
-    filename: 'main.js',  // Название скомпилированного JS файла
-    path: path.resolve(__dirname, 'dist/js'),  // Путь для выходного JS файла
+    filename: 'main.js', 
+    path: path.resolve(__dirname, 'dist/js'),
   },
   module: {
     rules: [
       {
-        test: /\.js$/,  // Для обработки всех JS файлов
-        exclude: /node_modules/,  // Исключаем node_modules
+        test: /\.js$/, 
+        exclude: /node_modules/, 
         use: {
-          loader: 'babel-loader',  // Используем babel-loader для транспиляции JS (установите babel-loader и @babel/core)
+          loader: 'babel-loader',
         },
       },
     ],
   },
-  mode: 'production',  // Устанавливаем режим production для минификации кода
+  mode: 'production', 
 };
